@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Site de Previsao do Tempo">
+    <meta name="keywords" content="previsão,previsao do tempo atualizada,tempo,tempo agora">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="shortcut icon" href="/static/cloudy.png" type="image/x-icon">
+    <title>Previsao</title>
+</head>
+<body>
+   <script src="/static/script.js"></script>
+      <header>
+             <h1 class="title">Previsão do tempo</h1>
+             <form action="{{ url_for('previsao') }}" method="post">
+                <input class="barra" type="text" name="name" id="nome" placeholder="Sua cidade...">
+                <input class="botao" type="submit" value="Buscar" onclick="clim()">
+             </form>
+      </header>
+
+     <main>
+         <div class="hoje" id="hoje">
+            <h1>{{cidade}}
+               <img class='loc'src="/static/pino-de-localizacao.png" alt="">
+            </h1> 
+            <p>&#x1F53A {{ tempe_max }}° MAX</p>
+            <h2 class="temp">{{ temp }}°</h2>   
+            <p>&#x1F53b {{ tempe_min }}° MIN</p>
+            <img id="teste"  src="/static/alfa.png" alt="">
+             <h2 class="clima" id="clima_um">{{ clima }}</h2>                
+             <p>{{ hoje }}</p>
+             <div class="button">
+               <button id="button" onclick="maisinfo()">&#10549;</button>
+             </div>
+             <span id="mais">
+               <h2>Sensação: {{ sensacao }}°</h1>
+               <h2>Umidade do ar:{{ humidity }}%</h2>
+               <h2>Vento: {{ vento }}Km/h </h2>
+               <h2>Nascer do sol: {{ sunrise }}</h2>
+               <h2>Por do Sol: {{ sunset }}</h2>
+             </span>
+         </div>
+         <div class="hoje_um" id="um">
+            <h2 class="temp_um_min">Maxima:{{ amanha_max }}°</h2>
+            <h2 class="temp_um_max">Minima:{{ amanha_min }}°</h2>
+            <h2 class="clima_um">{{ descricao }}</h2>
+            <p>{{ data }}</p>
+         </div>
+         <div class="hoje_um" id="dois">
+            <h2 class="temp_um_min">Maxima:{{ amanha_dois_max }}°</h2>
+            <h2 class="temp_um_max">Minima:{{ amanha_dois_min }}°</h2>
+            <h2 class="clima_um">{{ descricao_dois }}</h2>
+            <p>{{ data_dois }}</p>
+         </div>
+         <div class="hoje_um" id="tres">
+            <h2 class="temp_um_min">Maxima:{{ amanha_tres_max }}°</h2>
+            <h2 class="temp_um_max">Minima:{{ amanha_tres_min }}°</h2>
+            <h2 class="clima_um">{{ descricao_tres }}</h2>
+            <p>{{ data_tres }}</p>
+         </div>
+         <div class="hoje_um">
+            <h2 class="temp_um_min">Maxima:{{ amanha_quatro_max }}°</h2>
+            <h2 class="temp_um_max">Minima:{{ amanha_quatro_min }}°</h2>
+            <h2 class="clima_um">{{ descricao_quatro }}</h2>
+            <p>{{ data_quatro }}</p>
+         </div>
+         <div class="hoje_um">
+            <h2 class="temp_um_min">Maxima:{{ amanha_cinco_max }}°</h2>
+            <h2 class="temp_um_max">Minima:{{ amanha_cinco_min }}°</h2>
+            <h2 class="clima_um">{{ descricao_cinco }}</h2>
+            <p>{{ data_cinco }}</p>
+         </div>
+
+         <footer>
+            <h3>Desenvolvimento:</h3>
+            <img src="/static/me-pq.jpeg" alt="">
+            <a href="https://www.linkedin.com/in/eduardo-marchesan-3801541b0/">Eduardo Marchesan &#x1F517</a>
+         </footer>
+     </main>
+</body>
+</html>
