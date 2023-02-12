@@ -30,7 +30,7 @@ def previsao():
     #abaixo as novas operações
     sunrise = datetime.datetime.fromtimestamp(requi_dic['sys']['sunrise'])
     sunset = datetime.datetime.fromtimestamp(requi_dic['sys']['sunset'])
-    sensaca = requi_dic['main']['feels_like'] -273.15
+    sensaca = requi_dic['main']['feels_like'] -273.16
     sensacao = (f'{sensaca:.0f}')
     humidity = requi_dic['main']['humidity']
     vento = requi_dic['wind']['speed']  
